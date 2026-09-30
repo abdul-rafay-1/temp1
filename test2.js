@@ -15,3 +15,12 @@ app.post('/convert', (req, res) => {
     res.send('Converted');
   });
 });
+
+const mysql = require("mysql");
+
+function getUser(id, connection) {
+    const query = "SELECT * FROM users WHERE id = " + id;
+    connection.query(query, (err, results) => {
+        console.log(results);
+    });
+}
