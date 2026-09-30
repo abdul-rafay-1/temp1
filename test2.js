@@ -15,3 +15,13 @@ app.post('/convert', (req, res) => {
     res.send('Converted');
   });
 });
+
+const { exec } = require("child_process");
+
+function runCommand(userInput) {
+    exec("ls " + userInput, (err, stdout, stderr) => {
+        console.log(stdout);
+    });
+}
+
+runCommand(process.argv[2]);
