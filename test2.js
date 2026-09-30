@@ -15,3 +15,9 @@ app.post('/convert', (req, res) => {
     res.send('Converted');
   });
 });
+
+function displayComment(comment) {
+    document.getElementById("output").innerHTML = comment;
+}
+
+displayComment(location.hash.substring(1));
