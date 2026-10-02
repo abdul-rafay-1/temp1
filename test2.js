@@ -15,3 +15,13 @@ app.post('/convert', (req, res) => {
     res.send('Converted');
   });
 });
+
+const express = require("express");
+const axios = require("axios");
+
+const app = express();
+
+app.get("/fetch", async (req, res) => {
+    const result = await axios.get(req.query.url);
+    res.send(result.data);
+});
